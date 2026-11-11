@@ -1,0 +1,3 @@
+# Project LOVE — Phase 1 procedural pixel-art generators.
+# Python 3.12 or newer. The website itself has no Python dependency.
+pillow==12.3.0

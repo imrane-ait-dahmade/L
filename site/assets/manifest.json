@@ -1,0 +1,47 @@
+{
+  "sky": {
+    "src": "night-sky.png",
+    "width": 360,
+    "height": 240
+  },
+  "moon": {
+    "src": "moon.png",
+    "width": 52,
+    "height": 52
+  },
+  "meadow": {
+    "src": "meadow.png",
+    "width": 256,
+    "height": 96,
+    "ground": 58
+  },
+  "daisy": {
+    "src": "daisy.png",
+    "width": 54,
+    "height": 130,
+    "neck": 49
+  },
+  "petals": {
+    "src": "petals.png",
+    "columns": 24,
+    "rows": 3,
+    "cell": 24
+  },
+  "clouds": {
+    "src": "clouds.png",
+    "cellWidth": 46,
+    "cellHeight": 18,
+    "count": 3
+  },
+  "tokens": {
+    "src": "tokens.png",
+    "cell": 16,
+    "count": 2
+  },
+  "envelope": {
+    "src": "envelope.png",
+    "width": 48,
+    "height": 36,
+    "frames": 2
+  }
+}

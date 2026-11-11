@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#09152D">
+    <meta name="description" content="An interactive pixel-art night, beginning with a moonlit daisy.">
+    <title>LOVE — The Beginning</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="preload" as="image" href="assets/night-sky.png">
+    <link rel="preload" as="image" href="assets/daisy.png">
+    <link rel="stylesheet" href="css/scene.css">
+  </head>
+  <body>
+    <main class="scene" id="scene" data-scene="beginning" data-kind="opening">
+      <h1 class="sr-only" id="scene-title">The Beginning</h1>
+      <img class="sky" src="assets/night-sky.png" alt="" width="360" height="240" fetchpriority="high" decoding="async">
+      <canvas class="fx fx-stars" id="stars" aria-hidden="true"></canvas>
+      <button class="moon-wrap" id="moon-wrap" type="button" aria-label="Touch the moon">
+        <canvas class="moon-glow" id="moon-glow" width="48" height="48" aria-hidden="true"></canvas>
+        <img class="moon" id="moon" src="assets/moon.png" alt="" width="52" height="52" decoding="async">
+      </button>
+      <div class="meadow" aria-hidden="true">
+        <div class="meadow-track" id="meadow-track">
+          <img src="assets/meadow.png" alt="" width="256" height="96" draggable="false">
+          <img src="assets/meadow.png" alt="" width="256" height="96" draggable="false">
+          <img src="assets/meadow.png" alt="" width="256" height="96" draggable="false">
+          <img src="assets/meadow.png" alt="" width="256" height="96" draggable="false">
+        </div>
+        <canvas class="grass" id="grass" aria-hidden="true"></canvas>
+        <div class="tokens" id="tokens">
+          <button class="token" type="button" data-frame="1" style="left: 14%" aria-label="Touch the bud"></button>
+          <button class="token" type="button" data-frame="0" style="left: 74%" aria-label="Touch the stone"></button>
+          <button class="token" type="button" data-frame="1" style="left: 86%" aria-label="Touch the bud"></button>
+        </div>
+      </div>
+      <canvas class="fx fx-petals-back" id="petals-back" aria-hidden="true"></canvas>
+      <canvas class="fx fx-fireflies" id="fireflies" aria-hidden="true"></canvas>
+      <button class="daisy-button" id="daisy-button" type="button" aria-label="Rustle the daisy">
+        <span class="daisy-shift" id="daisy-shift">
+          <img class="daisy-still" src="assets/daisy.png" alt="" width="54" height="130" decoding="async" fetchpriority="high">
+          <canvas class="daisy-live" id="daisy-canvas" width="54" height="130" aria-hidden="true"></canvas>
+        </span>
+      </button>
+      <canvas class="fx fx-petals" id="petals" aria-hidden="true"></canvas>
+      <canvas class="fx fx-sparks" id="sparks" aria-hidden="true"></canvas>
+      <div class="veil" aria-hidden="true"></div>
+      <div class="dawn" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="story" id="story" hidden>
+        <div class="finds" id="finds"></div>
+        <p class="reading" id="reading" aria-live="polite"></p>
+        <button class="envelope" id="envelope" type="button" hidden aria-expanded="false"></button>
+        <article class="letter-sheet" id="letter-sheet" hidden>
+          <p class="letter-visual" id="letter-visual" aria-hidden="true"></p>
+          <p class="sr-only" id="letter-live" aria-live="polite"></p>
+        </article>
+        <div class="finale" id="finale" hidden>
+          <p class="finale-line" id="finale-line"></p>
+          <button class="replay" id="replay" type="button">Replay</button>
+        </div>
+      </div>
+      <div class="chapter" id="chapter">
+        <p class="chapter-kicker" id="chapter-kicker">The Beginning</p>
+        <p class="chapter-line" id="chapter-line">Placeholder. Write the opening line of the piece here.</p>
+      </div>
+      <nav class="chapter-nav" aria-label="Scenes">
+        <button class="chapter-step" id="chapter-prev" type="button">Back</button>
+        <ol id="chapter-dots">
+          <li><button class="dot" type="button" data-scene="beginning" aria-current="true" aria-label="The Beginning">1</button></li>
+          <li><button class="dot" type="button" data-scene="flower" aria-label="The Flower">2</button></li>
+          <li><button class="dot" type="button" data-scene="memories" aria-label="Little Memories">3</button></li>
+          <li><button class="dot" type="button" data-scene="letter" aria-label="A Secret Letter">4</button></li>
+          <li><button class="dot" type="button" data-scene="forever" aria-label="Forever in This Moment">5</button></li>
+        </ol>
+        <button class="chapter-step" id="chapter-next" type="button">Step closer</button>
+      </nav>
+      <div class="hud">
+        <button class="hud-button" id="motion-toggle" type="button" aria-pressed="false">Play motion</button>
+        <button class="hud-button" id="sound-toggle" type="button" aria-pressed="false">Sound off</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+      <noscript>
+        <p class="noscript">The night stays still without JavaScript. The daisy, moon, and meadow are still here.</p>
+      </noscript>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
